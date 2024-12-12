@@ -1,0 +1,415 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://example.org/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Classes related to Courses  
+ex:Course a rdfs:Class.
+ex:Topic a rdfs:Class.
+ex:Skill a rdfs:Class.
+ex:Research a rdfs:Class.
+ex:CourseLevel a rdfs:Class.
+ex:Degree a rdfs:Class.
+ex:Domain a rdfs:Class.
+ex:Role a rdfs:Class.
+ex:TeachingExperience a rdfs:Class.
+
+# Classes related to Teacher
+ex:Teacher a rdfs:Class.
+ex:Experience a rdfs:Class.
+
+# Object Properties Related to Courses
+ex:hasTopic a rdf:Property ;
+    rdfs:domain ex:Course ;
+    rdfs:range ex:Topic .
+
+ex:researchRelatedTo a rdf:Property ;
+    rdfs:domain ex:Research;
+    rdfs:range ex:Course.
+
+ex:requiresDegree a rdf:Property ;
+    rdfs:domain ex:Course ;
+    rdfs:range ex:Degree.
+
+ex:hasCourseLevel a rdf:Property ;
+    rdfs:domain ex:Course ;
+    rdfs:range ex:CourseLevel .
+
+ex:belongsToDomain a rdf:Property ;
+    rdfs:domain ex:Course ;
+    rdfs:range ex:Domain .
+
+ex:requiresSkill a rdf:Property ;
+    rdfs:domain ex:Course ;
+    rdfs:range ex:Skill.
+
+ex:roleRelevantTo a rdf:Property ;
+    rdfs:domain ex:Role ;
+    rdfs:range ex:Course .
+
+# Object Properties Related to Teachers
+ex:hasTaught a rdf:Property ;
+    rdfs:domain ex:Teacher ;
+    rdfs:range ex:Course .
+
+ex:hasSkill a rdf:Property ;
+    rdfs:domain ex:Teacher ;
+    rdfs:range ex:Skill .
+
+ex:doneResearch a rdf:Property ;
+    rdfs:domain ex:Teacher ;
+    rdfs:range ex:Research.
+
+ex:relatedToDomain a rdf:Property ;
+    rdfs:domain ex:Teacher ;
+    rdfs:range ex:Domain .
+
+ex:hasDegree a rdf:Property ;
+    rdfs:domain ex:Teacher ;
+    rdfs:range ex:Degree.
+
+ex:hasExperience a rdf:Property ;
+    rdfs:domain ex:Teacher;
+    rdfs:range ex:Experience.
+
+ex:hasRole a rdf:Property ;
+    rdfs:domain ex:Experience;
+    rdfs:range ex:Role.
+
+# Data Properties for Experience
+ex:yearsOfExperience a rdf:Property ;
+    rdfs:domain ex:Experience ;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#integer> ;
+    rdfs:label "Years" .
+
+ex:organizationName a rdf:Property ;
+    rdfs:domain ex:Experience ;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#string> ;
+    rdfs:label "Organization" .
+
+
+ex:BachelorsInComputerScience a ex:Degree.
+ex:Phd_ComputerVision a ex:Degree.
+ex:Phd_MachineLearning a ex:Degree.
+ex:BachelorsInSoftwareEngineering a ex:Degree.
+ex:BachelorsInDataScience a ex:Degree.
+ex:BachelorsInPhysics a ex:Degree.
+ex:MastersInPhysics a ex:Degree.
+ex:BachelorsInComputationalLinguistics a ex:Degree.
+ex:BachelorsInArtificialIntelligence a ex:Degree.
+ex:MastersInComputerScience a ex:Degree.
+ex:MastersInAritificialIntelligence a ex:Degree.
+ex:MastersInInformationSystems a ex:Degree.
+ex:Phd_ComputerVision a ex:Degree.
+ex:Phd_MachineLearning a ex:Degree.
+
+
+ex:Basic a ex:CourseLevel .
+ex:Intermediate a ex:CourseLevel .
+ex:Senior a ex:CourseLevel .
+
+ex:AI a ex:Domain .
+ex:SoftwareEngineering a ex:Domain .
+ex:CoreComputing a ex:Domain .
+ex:Physics a ex:Domain.
+
+
+# ----------------------------- SKILLS ------------------------------------
+ex:Programming a ex:Skill.
+ex:Teaching a ex:Skill.
+ex:DatabaseManagement a ex:Skill.
+ex:RiskManagement a ex:Skill.
+
+# -----------------------------------------------
+# Specific Skills for NLP
+# -----------------------------------------------
+ex:NaturalLanguageProcessing a ex:Skill .
+ex:MachineLearning a ex:Skill .
+ex:DeepLearning a ex:Skill .
+ex:NeuralNetworks a ex:Skill .
+ex:LanguageModeling a ex:Skill .
+ex:InformationExtraction a ex:Skill .
+ex:MachineTranslation a ex:Skill .
+ex:NamedEntityRecognition a ex:Skill .
+ex:SemanticParsing a ex:Skill .
+ex:AttentionMechanisms a ex:Skill .
+ex:NaturalLanguageApplications a ex:Skill .
+
+# -----------------------------------------------
+# Specific Skills for IS_Audit_And_Control
+# -----------------------------------------------
+ex:AuditProcess a ex:Skill .
+ex:InformationSecurity a ex:Skill.
+ex:AuditAndCompliance a ex:Skill.
+ex:ISCompliance a ex:Skill.
+# ex:RiskManagement a ex:Skill.
+ex:ISStrategyPlanning a ex:Skill .
+ex:InformationSecurity a ex:Skill .
+ex:SystemDevelopmentManagement a ex:Skill .
+ex:ProgrammingControls a ex:Skill .
+ex:DataResourceManagement a ex:Skill .
+ex:SecurityManagement a ex:Skill .
+ex:OperationsManagement a ex:Skill .
+ex:QualityAssurance a ex:Skill .
+ex:InputProcessAndOutputControls a ex:Skill .
+ex:CommunicationControls a ex:Skill .
+ex:ComputerizedAuditSoftware a ex:Skill .
+ex:PerformanceMeasurementTools a ex:Skill .
+ex:DisasterRecoveryPlanning a ex:Skill .
+ex:BusinessContinuityPlanning a ex:Skill .
+
+# -----------------------------------------------
+# Specific Skills for Design Defect Course
+# -----------------------------------------------
+
+ex:SoftwareArchitecture a ex:Skill.
+ex:CloudComputing a ex:Skill.
+ex:ArchitecturalMethods a ex:Skill.
+ex:DesignPatterns a ex:Skill.
+ex:FaultAnalysis a ex:Skill.
+ex:SystemModeling a ex:Skill.
+# ex:RiskManagement a ex:Skill
+ex:ProjectManagement a ex:Skill.
+ex:QualityAssurance a ex:Skill.
+ex:ScalabilityDesign a ex:Skill.
+ex:SecurityArchitecture a ex:Skill.
+ex:SystemDesign a ex:Skill.
+ex:ModularDesign a ex:Skill.
+ex:PerformanceOptimization a ex:Skill.
+ex:SoftwareDeployment a ex:Skill.
+ex:MaintenanceStrategies a ex:Skill.
+ex:SystemIntegration a ex:Skill.
+ex:ContinuousIntegration a ex:Skill.
+ex:DataArchitecture a ex:Skill.
+ex:AgileMethodologies a ex:Skill.
+ex:Compliance a ex:Skill.
+
+
+ex:Information_Security_Analyst a ex:Role ;
+    ex:roleRelevantTo ex:IS_Audit_And_Control.
+
+ex:IT_Audit_And_Compliance_Officer a ex:Role;
+    ex:roleRelevantTo ex:IS_Audit_And_Control.
+
+ex:System_Analyst_Programmer a ex:Role;
+    ex:roleRelevantTo ex:DesignDefect.
+
+ex:Software_Engineer a ex:Role;
+    ex:roleRelevantTo ex:DesignDefect, ex:NaturalLanguageProcessing.
+
+ex:Development_Manager a ex:Role ;
+    ex:roleRelevantTo ex:DesignDefect.
+
+ex:Chief_Technology_Officer a ex:Role;
+    ex:roleRelevantTo ex:IS_Audit_And_Control, ex:DesignDefect.
+
+ex:Deputy_Director_Development a ex:Role;
+    ex:roleRelevantTo ex:DesignDefect.
+
+ex:Software_Development_Manager a ex:Role ;
+    ex:roleRelevantTo ex:DesignDefect.
+
+ex:Information_System_Consultant a ex:Role;
+    ex:roleRelevantTo ex:IS_Audit_And_Control.
+ex:Associate_Software_Engineer a ex:Role ;
+    ex:roleRelevantTo ex:Software_Development .
+
+ex:System_Administrator a ex:Role .
+ex:Assistant_Professor a ex:Role .
+ex:Lecturer a ex:Role .
+ex:Visiting_Faculty a ex:Role .
+ex:Instructor a ex:Role.
+ex:Branch_Support_Officer a ex:Role.
+
+
+ex:Experience1 a ex:Experience ;
+    ex:hasRole ex:Information_Security_Analyst ;
+    ex:yearsOfExperience "17"^^xsd:int ;
+    ex:organization ex:National_Bank_of_Pakistan .
+
+ex:Experience2 a ex:Experience ;
+    ex:hasRole ex:IT_Audit_And_Compliance_Officer ;
+    ex:yearsOfExperience "2"^^xsd:int ;
+    ex:organization ex:National_Bank_of_Pakistan .
+
+ex:Experience3 a ex:Experience ;
+    ex:hasRole ex:Branch_Support_Officer ;
+    ex:yearsOfExperience "2"^^xsd:int ;
+    ex:organization ex:United_Bank_Limited .
+
+ex:Experience4 a ex:Experience ;
+    ex:hasRole ex:System_Analyst_Programmer ;
+    ex:yearsOfExperience "1"^^xsd:int ;
+    ex:organization ex:Callmate_TELIPS_Telecom_Limited .
+
+ex:Experience5 a ex:Experience ;
+    ex:hasRole ex:Software_Engineer ;
+    ex:yearsOfExperience "1"^^xsd:int ;
+    ex:organization ex:Engineering_Associates_Private_Limited .
+
+ex:Experience6 a ex:Experience ;
+    ex:hasRole ex:Software_Engineer ;
+    ex:yearsOfExperience "1"^^xsd:int ;
+    ex:organization ex:ePatterns_Software_Solutions_Company .
+
+ex:Experience7 a ex:Experience ;
+    ex:hasRole ex:Instructor ;
+    ex:yearsOfExperience "2"^^xsd:int ;
+    ex:organization ex:King_Word_Institute_of_Information_Technology .
+
+ex:Experience8 a ex:Experience;
+    ex:hasRole ex:Assistant_Professor;
+    ex:yearsOfExperience "12"^^xsd:integer;
+    ex:organizationName "Federal Urdu University of Arts, Science and Technology, Karachi".
+
+ex:Experience9 a ex:Experience;
+    ex:hasRole ex:Lecturer;
+    ex:yearsOfExperience "7"^^xsd:integer;
+    ex:organizationName "Federal Urdu University of Arts, Science and Technology, Karachi".
+
+ex:Experience10 a ex:Experience;
+    ex:hasRole ex:Visiting_Faculty;
+    ex:yearsOfExperience "5"^^xsd:integer;
+    ex:organizationName "IBA, FAST NU, Bahria University, and others".
+
+ex:Experience11 a ex:Experience ;
+    ex:hasRole ex:Development_Manager ;
+    ex:yearsOfExperience "14"^^xsd:int ;
+    ex:organization ex:WorkForce_Software .
+
+ex:Experience12 a ex:Experience ;
+    ex:hasRole ex:Chief_Technology_Officer ;
+    ex:yearsOfExperience "3"^^xsd:int ;
+    ex:organization ex:Progressive_Systems .
+
+ex:Experience13 a ex:Experience ;
+    ex:hasRole ex:Deputy_Director_Development ;
+    ex:yearsOfExperience "5"^^xsd:int ;
+    ex:organization ex:Progressive_Systems .
+
+ex:Experience14 a ex:Experience ;
+    ex:hasRole ex:Software_Development_Manager ;
+    ex:yearsOfExperience "3"^^xsd:int ;
+    ex:organization ex:Progressive_Systems .
+
+ex:Experience15 a ex:Experience ;
+    ex:hasRole ex:Information_System_Consultant ;
+    ex:yearsOfExperience "3"^^xsd:int ;
+    ex:organization ex:UNISYS_Pakistan .
+
+ex:Experience16 a ex:Experience ;
+    ex:hasRole ex:System_Administrator ;
+    ex:yearsOfExperience "2"^^xsd:int ;
+    ex:organization ex:FAST_Institute_of_Computer_Science .
+
+ex:Senior_Software_Quality_Assurance_Engineer a ex:Role ;
+    ex:roleRelevantTo ex:DesignDefect.
+
+ex:Experience17 a ex:Experience ;
+    ex:hasRole ex:Senior_Software_Quality_Assurance_Engineer ;
+    ex:yearsOfExperience "9"^^xsd:int ;
+    ex:organization ex:Symantec .
+
+ex:Experience18 a ex:Experience ;
+    ex:hasRole ex:Associate_Software_Engineer ;
+    ex:yearsOfExperience "1"^^xsd:int ;
+    ex:organization ex:Creative_Chaos .
+
+
+ex:Security_issues_in_ERP a ex:Research;
+    ex:researchRelatedTo ex:IS_Audit_And_Control, ex:DesignDefect.
+ex:Software_Quality_Assurance_Engineering a ex:Research;
+    ex:researchRelatedTo ex:DesignDefect.
+
+ex:Risk_Planning_in_Core_Banking_Applications a ex:Research;
+    ex:researchRelatedTo ex:IS_Audit_And_Control.
+
+ex:Change_Management_in_Banking_Sectors a ex:Research ;
+    ex:researchRelatedTo ex:IS_Audit_And_Control.
+
+ex:IT_Governance_in_Corporate_Sectors a ex:Research ;
+    ex:researchRelatedTo ex:IS_Audit_And_Control.
+
+ex:Learners_Programming_Language a ex:Research;
+    ex:researchRelatedTo ex:NLP.
+
+ex:On_the_Felicitous_Applications_of_Natural_Language a ex:Research;
+    ex:researchRelatedTo ex:NLP.
+
+# ----------------------------- TEACHER ------------------------------------
+ex:Mr_Kashif a ex:Teacher;
+    ex:hasDegree ex:BachelorsInComputerScience, ex:MastersInInformationSystems ;
+    ex:hasSkill ex:AuditAndCompliance, ex:InformationSecurity, ex:ISCompliance, ex:ISStrategyPlanning, ex:AuditProcess, ex:OperationsManagement, ex:RiskManagement, ex:BusinessContinuityPlanning, ex:PerformanceMeasurementTools, ex:ComputerizedAuditSoftware, ex:SecurityManagement, ex:DisasterRecoveryPlanning, ex:SystemDevelopmentManagement, ex:QualityAssurance ;
+    ex:hasExperience ex:Experience1, ex:Experience2, ex:Experience3, ex:Experience4, ex:Experience5, ex:Experience6, ex:Experience7 ;
+    ex:doneResearch ex:Security_issues_in_ERP, ex:Software_Quality_Assurance_Engineering, ex:Risk_Planning_in_Core_Banking_Applications, ex:Change_Management_in_Banking_Sectors, ex:IT_Governance_in_Corporate_Sectors ;
+    ex:relatedToDomain ex:CoreComputing, ex:Software_Engineering.
+
+
+ex:Dr_Sarim a ex:Teacher;
+    ex:hasDegree ex:BachelorsInPhysics, ex:MastersInPhysics, ex:Phd_ComputerVision, ex:Phd_MachineLearning;
+    ex:hasSkill ex:Programming, ex:MachineLearning, ex:DeepLearning, ex:NaturalLanguageProcessing, ex:TextAnalysis, ex:DataScience, ex:ComputerVision, ex:NeuralNetworks, ex:InformationExtraction, ex:LanguageModeling, ex:NaturalLanguageApplications, ex:AttentionMechanisms;
+    ex:hasExperience ex:Experience8, ex:Experience9, ex:Experience10;
+    ex:doneResearch ex:On_the_Felicitous_Applications_of_Natural_Language, ex:Learners_Programming_Language;
+    ex:relatedToDomain ex:AI, ex:CoreComputing, ex:Physics.
+
+ex:Mr_Syed_Yousuf a ex:Teacher; 
+    ex:hasDegree ex:MasterOfComputerScience, ex:BachelorOfComputerScience; 
+    ex:hasSkill ex:ProjectManagement, ex:QualityAssurance, ex:SoftwareArchitecture, ex:CloudComputing, ex:ArchitecturalMethods, ex:DesignPatterns, ex:SystemDesign, ex:ModularDesign, ex:PerformanceOptimization, ex:SoftwareDeployment, ex:MaintenanceStrategies, ex:SystemIntegration, ex:ContinuousIntegration, ex:DataArchitecture, ex:AgileMethodologies, ex:Compliance;
+    ex:relatedToDomain ex:Software_Engineering, ex:CoreComputing;
+    ex:hasExperience ex:Experience11, ex:Experience12,ex:Experience13,ex:Experience14,ex:Experience15, ex:Experience16.
+
+ex:Mr_Ali_Shan a ex:Teacher;
+    ex:hasDegree ex:BachelorsInSoftwareEngineering, ex:MastersInSoftwareEngineering;
+    ex:hasSkill ex:QualityAssurance, ex:ProjectManagement, ex:DatabaseManagement, ex:AgileMethodologies, ex:Teaching, ex:RiskManagement, ex:Testing, ex:DefectTesting, ex:BugReporting, ex:CloudSecurityApplications;
+    ex:relatedToDomain ex:SoftwareEngineering;
+    ex:hasExperience ex:Experience17, ex:Experience18. 
+
+
+# ----------------------------- COURSES ------------------------------------
+## NLP Course
+ex:NLP a ex:Course ;
+    ex:hasCourseLevel ex:Basic;
+    ex:requiresDegree ex:BachelorsInArtificialIntelligence, ex:BachelorsInDataScience, ex:BachelorsInComputationalLinguistics, ex:Phd_MachineLearning;
+    ex:hasTopic ex:LanguageModels, ex:POSandSequenceLabeling, ex:NeuralNetworks, ex:SyntacticParsing, ex:SemanticAnalysis, ex:InformationExtraction, ex:MachineTranslation;
+    ex:requiresSkill ex:NaturalLanguageProcessing, ex:MachineLearning, ex:DeepLearning, ex:NeuralNetworks, ex:LanguageModeling, ex:InformationExtraction, ex:MachineTranslation, ex:NamedEntityRecognition, ex:SemanticParsing, ex:AttentionMechanisms, ex:NaturalLanguageApplications ;
+    ex:belongsToDomain ex:AI, ex:CoreComputing.
+
+## IS Audit and Control Course
+ex:IS_Audit_And_Control a ex:Course ;
+    ex:hasCourseLevel ex:Senior ;
+    ex:requiresDegree ex:MastersInInformationSystems, ex:BachelorsInComputerScience, ex:BachelorsInSoftwareEngineering;
+    ex:hasTopic ex:AuditProcess, ex:ManagementControls, ex:SpecificControls, ex:AuditTools, ex:DisasterRecovery ;
+    ex:requiresSkill ex:AuditProcess, ex:InformationSecurity, ex:AuditAndCompliance, ex:ISCompliance, ex:ISStrategyPlanning, ex:SystemDevelopmentManagement, ex:ProgrammingControls, ex:DataResourceManagement, ex:SecurityManagement, ex:OperationsManagement, ex:QualityAssurance, ex:InputProcessAndOutputControls, ex:CommunicationControls, ex:ComputerizedAuditSoftware, ex:PerformanceMeasurementTools, ex:DisasterRecoveryPlanning, ex:BusinessContinuityPlanning ;
+    ex:belongsToDomain ex:CoreComputing, ex:SoftwareEngineering.
+
+## Design Defect Course
+ex:DesignDefect a ex:Course ;
+    ex:hasCourseLevel ex:Intermediate ;
+    ex:requiresDegree ex:BachelorsInSoftwareEngineering, ex:MastersInSoftwareEngineering, ex:MastersInComputerScience ;
+    ex:hasTopic ex:SoftwareArchitecture, ex:ArchitecturalStyles, ex:ArchitecturalMethods, ex:SoftwarePatterns ;
+    ex:requiresSkill ex:SoftwareArchitecture, ex:CloudComputing, ex:ArchitecturalMethods, ex:DesignPatterns, ex:FaultAnalysis, ex:SystemModeling, ex:ProjectManagement, ex:QualityAssurance, ex:ScalabilityDesign, ex:SecurityArchitecture, ex:SystemDesign, ex:ModularDesign, ex:PerformanceOptimization, ex:SoftwareDeployment, ex:MaintenanceStrategies, ex:SystemIntegration, ex:ContinuousIntegration, ex:DataArchitecture, ex:AgileMethodologies, ex:Compliance ;
+    ex:belongsToDomain ex:SoftwareEngineering, ex:CoreComputing.
+
+
+# ----------------------------- TOPICS ------------------------------------
+## NLP Topics
+ex:LanguageModels a ex:Topic .
+ex:POSandSequenceLabeling a ex:Topic .
+ex:NeuralNetworks a ex:Topic .
+ex:SyntacticParsing a ex:Topic .
+ex:SemanticAnalysis a ex:Topic .
+ex:InformationExtraction a ex:Topic .
+ex:MachineTranslation a ex:Topic .
+
+## IS Audit and Control Topics
+ex:AuditProcess a ex:Topic .
+ex:ManagementControls a ex:Topic .
+ex:SpecificControls a ex:Topic .
+ex:AuditTools a ex:Topic .
+ex:DisasterRecovery a ex:Topic .
+
+## Design Defect Topics
+ex:SoftwareArchitecture a ex:Topic .
+ex:ArchitecturalStyles a ex:Topic .
+ex:ArchitecturalMethods a ex:Topic .
+ex:SoftwarePatterns a ex:Topic .
