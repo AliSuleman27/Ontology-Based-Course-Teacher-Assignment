@@ -80,7 +80,7 @@ st.markdown(
     """
     <hr>
     <footer style="text-align: center; font-size: 14px;">
-        \U0001F4C8 Developed by <b>Your Name</b>. Data sourced from Ontology.
+        \U0001F4C8 Developed by <b>Nerdy Freaks </b>. Data sourced from Ontology.
     </footer>
     """,
     unsafe_allow_html=True,
